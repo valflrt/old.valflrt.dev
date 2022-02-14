@@ -218,4 +218,11 @@
 
 #root > #card > p {
   text-align: center;
+  padding-bottom: 8px;
+}
+
+.button {
+  --main-color: hsl(250, 31%, 70%);
+  --hover-color: hsl(250, 31%, 72%);
+  --active-color: hsl(250, 31%, 68%);
 }
