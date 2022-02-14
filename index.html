@@ -48,7 +48,10 @@
           </p>
           <pre class="code-block js">
 const decode = (str) => atob(str);
-window.location.pathname = decode("L2tlcWluZyB8fCAva2VxaW5nMg==");</pre
+const randomize = (...items) =>
+  items[Math.round(Math.random() * items.length)];
+window.location.pathname =
+  decode(randomize("L2tlcWluZw==", "L2tlcWluZzI="));</pre
           >
         </div>
         <div class="buttons">
