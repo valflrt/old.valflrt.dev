@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>valflrt</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/index.css" />
+
+    <!-- icons -->
+    <link rel="icon" href="./assets/images/favicon-64.png" type="image/png" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-64.png"
+      type="image/png"
+    />
+
+    <!-- fonts -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Code"
+    />
+  </head>
+  <body>
+    <div id="root" class="loading">
+      <div class="loader">
+        <span></span>
+      </div>
+      <div id="card">
+        <div class="profile-picture">
+          <img src="./assets/images/favicon-256.png" alt="profile picture" />
+        </div>
+        <div class="text">
+          <p>
+            Hiii ~<br />
+            I am <b>valflrt</b> a self deprecation and coding enthusiast !
+          </p>
+          <pre class="code-block js">
+const decode = (str) => atob(str);
+window.location.pathname = decode("L2tlcWluZyB8fCAva2VxaW5nMg==");</pre
+          >
+        </div>
+        <div class="buttons">
+          <div class="button-wrapper">
+            <a class="button" href="https://github.com/valflrt">Github</a>
+          </div>
+          <div class="button-wrapper">
+            <a class="button" href="https://lejardinier.valflrt.dev/">
+              My Discord Bot
+            </a>
+          </div>
+        </div>
+        <p class="unsupported">This window width is unsupported !</p>
+      </div>
+    </div>
+
+    <script>
+      const rootElement = document.getElementById("root");
+
+      setTimeout(
+        () => rootElement.classList.remove("loading"),
+        1e3 // 1 second
+      );
+
+      const currentPlatform = () => {
+        let desktopMinWidth = 780;
+        let mobileMinWidth = 260;
+        if (window.innerWidth > desktopMinWidth) return "desktop";
+        else if (
+          window.innerWidth <= desktopMinWidth &&
+          window.innerWidth > mobileMinWidth
+        )
+          return "mobile";
+        else return "unsupported";
+      };
+
+      const setCurrentPlatform = () => {
+        rootElement.classList.remove("mobile", "desktop", "unsupported");
+        rootElement.classList.add(currentPlatform());
+      };
+
+      setCurrentPlatform();
+      window.addEventListener("resize", setCurrentPlatform);
+    </script>
+  </body>
+</html>
