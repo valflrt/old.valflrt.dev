@@ -1,12 +1,33 @@
 #root > #card > h1.four-hundred-and-four {
   font-size: 200px;
   font-weight: 700;
-  animation: glitch 1.5s infinite;
+  animation: skew-anim 1.5s infinite;
   position: relative;
   z-index: 10;
 }
 
-@keyframes glitch {
+#root.mobile > #card > h1,
+#root.mobile > #card > h1.four-hundred-and-four::before {
+  font-size: 120px;
+  font-weight: 700;
+}
+
+#root > #card > h1.four-hundred-and-four::before {
+  content: "404";
+  top: 0;
+  left: 0;
+
+  font-size: 200px;
+  font-weight: 700;
+  text-shadow: -4px -2px #0bcff1bf, 4px 2px #e4187ebf;
+
+  animation: glitch-anim 1s infinite, move-anim 1.75s infinite !important;
+
+  position: absolute;
+  z-index: 12 !important;
+}
+
+@keyframes skew-anim {
   0% {
     transform: skew(2deg);
   }
@@ -40,21 +61,6 @@
   100% {
     transform: skew(-2deg);
   }
-}
-
-#root > #card > h1.four-hundred-and-four::before {
-  content: "404";
-  top: 0;
-  left: 0;
-
-  font-size: 200px;
-  font-weight: 700;
-  text-shadow: -4px -2px #0bcff1bf, 4px 2px #e4187ebf;
-
-  animation: glitch-anim 1s infinite, move-anim 2s infinite !important;
-
-  position: absolute;
-  z-index: 12 !important;
 }
 
 @keyframes glitch-anim {
@@ -208,4 +214,8 @@
   100% {
     transform: translateY(1px);
   }
+}
+
+#root > #card > p {
+  text-align: center;
 }
