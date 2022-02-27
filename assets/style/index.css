@@ -46,7 +46,7 @@ div.buttons {
   padding: 2px 0;
 }
 
-#root > #card > div.buttons .button {
+#root > #card .button {
   --main-color: hsl(250, 31%, 70%);
   --hover-color: hsl(250, 31%, 72%);
   --active-color: hsl(250, 31%, 68%);
